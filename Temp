@@ -1,0 +1,11 @@
+import nibabel as nib
+import numpy as np
+from nilearn import masking
+
+img = nib.load("sub-NDARAD481FXF_1_task-task-rest_desc-preproc_bold.nii.gz")
+
+data = nilearn.masking.apply_mask(["sub-NDARAD481FXF_1_task-task-rest_desc-preproc_bold.nii.gz"], "sub-NDARAD481FXF_1_task-task-rest_space-bold_desc-brain_mask.nii.gz", dtype='f
+')
+
+
+
