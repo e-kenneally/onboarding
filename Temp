@@ -2,11 +2,20 @@ import nibabel as nib
 import numpy as np
 import nilearn
 from nilearn import masking
+from nilearn.maskers import NiftiLabelsMasker
+from nilearn.connectome import ConnectivityMeasure
 
 img = nib.load("sub-NDARAD481FXF_1_task-task-rest_desc-preproc_bold.nii.gz")
 
-data = nilearn.masking.apply_mask([img], "sub-NDARAD481FXF_1_task-task-rest_space-bold_desc-brain_mask.nii.gz", dtype='f
-')
+data = nilearn.masking.apply_mask([img], "sub-NDARAD481FXF_1_task-task-rest_space-bold_desc-brain_mask.nii.gz", dtype='f')
+
+#part b 
+
+masker = NiftiLabelsMasker(labels_img="CC200.nii.gz", standardize=True, memory='nilearn_cache', verbose=5)
+time_series = masker.fit_transform(img)
+correlation_measure = ConnectivityMeasure(kind='correlation')
+correlation_matrix = correlation_measure.fit_transform([time_series])[0]
+
 
 
 
