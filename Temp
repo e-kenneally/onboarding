@@ -16,6 +16,8 @@ time_series = masker.fit_transform(img)
 correlation_measure = ConnectivityMeasure(kind='correlation')
 correlation_matrix = correlation_measure.fit_transform([time_series])[0]
 
-
+# Vertex-wise time series data
+# See output in attached file
+wb_command -cifti-reduce sub-NDARAD481FXF_1_task-task-rest_space-fsLR_den-32k_bold-dtseries.nii MEAN output.dscalar.nii
 
 
