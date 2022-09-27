@@ -37,7 +37,7 @@ print("Schaefer correlation matrix ", correlation_matrix2)
 #
 # This section is commented out because I had trouble with the file type of 
 #   the WB command output - I wasn't able to plug it into any of the nibabel
-#   utilities. I left the workflow here to show my thought process.
+#   utilities. I left the workflow here to show my thought process. 
 #
 # img2 = nib.load("output.dscalar.nii")
 # masker = NiftiLabelsMasker(labels_img="Schaefer200_space-MNI152NLin6_res-1x1x1.nii", 
@@ -57,5 +57,12 @@ print("Schaefer correlation matrix ", correlation_matrix2)
 # I also compared the output directories of the two pipelines, and the result
 #    of that comparison is in diff_output.txt
 #
+# I did not manage to complete the Mindboggle part due to input issues in Docker, but I got a 
+# good sense of how Mindboggle works!
+#
 # Extending CPAC
+#
+# Prior probability maps added in the file func_preproc_modified.py
+# 
+# I couldn't figure out how to integrate the time series extraction tool. :(
 
