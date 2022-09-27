@@ -1,0 +1,36 @@
+"""
+
+Elizabeth Kenneally Onboarding
+
+The file with the bulk of my work is called main.py, and it contains:
+      1. Voxelwise time series data -> voxelwise connectomes
+      2. Voxelwise time series data -> parcellated time series data with 2 atlases
+      3. Voxelwise time series data -> parcellated connectomes with 2 atlases
+      4. WB command used to generate parcellated time series data on the surface
+
+Other files include:
+  - modified_pipeline.py: Modified version of pipeline
+  - diff_output.py: Difference between output from CPAC using default pipeline vs modified pipeline
+  - TODO: Output from running Mindboggle on same data
+  - TODO: func_preproc_modified.py: file with modifications to include prior probability maps with FSL Fast
+  - TODO: timeseries_analysis_modified.py: file with modifications to include the ability to run ciftify's mean 
+    time series extraction tool
+    
+ CPAC default pipeline output file: 
+  sub-0025429_ses-1_task-rest_run-1_space-template_desc-preproc-1_bold.nii 
+ CPAC modified pipeline output file: (left it zipped to differentiate)
+  sub-0025429_ses-1_task-rest_run-1_space-template_desc-preproc-1_bold.nii.gz 
+
+Parts not completed:
+
+One part of the document I didn't complete was the visualization of the brain parcellations on 
+the surface. I was having strange errors regarding the display when I tried to run any visualization
+tools, so I will reach out to IT to have that looked at. 
+
+I also have not provided any output files from CPAC runs, since for some reason the files were too 
+big to push to github. That is why I included the diff output file. 
+
+I am still finishing up the expanding CPAC parts, so those files are not yet available. 
+
+
+"""
