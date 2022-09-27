@@ -31,34 +31,9 @@ print("Schaefer correlation matrix ", correlation_matrix2)
 
 # Vertex-wise time series data -> average values across time
 #
-# Command used to create reduced file:
-#       wb_command -cifti-reduce sub-NDARAD481FXF_1_task-task-rest_space-fsLR_den-32k_bold-dtseries.nii 
-#       MEAN output.dscalar.nii
-#
-# This section is commented out because I had trouble with the file type of 
-#   the WB command output - I wasn't able to plug it into any of the nibabel
-#   utilities. I left the workflow here to show my thought process. 
-#
-# img2 = nib.load("output.dscalar.nii")
-# masker = NiftiLabelsMasker(labels_img="Schaefer200_space-MNI152NLin6_res-1x1x1.nii", 
-#   standardize=True, memory='nilearn_cache', verbose=5)
-# data = nilearn.masking.apply_mask(["output.dscalar.nii"], 
-#    "Schaefer200_space-MNI152NLin6_res-1x1x1.nii", dtype='f')
-#
-# time_series = masker.fit_transform("output.dscalar.nii")
-#
-# BIDS dataset -> cpac output
-#
-# CPAC default pipeline output file: 
-#   sub-0025429_ses-1_task-rest_run-1_space-template_desc-preproc-1_bold.nii
-# CPAC modified pipeline output file: (left it zipped to differentiate)
-#    sub-0025429_ses-1_task-rest_run-1_space-template_desc-preproc-1_bold.nii.gz
-# 
-# I also compared the output directories of the two pipelines, and the result
-#    of that comparison is in diff_output.txt
-#
-# I did not manage to complete the Mindboggle part due to input issues in Docker, but I got a 
-# good sense of how Mindboggle works!
+# Command used to parcellate:
+#    wb_command -cifti-parcellate sub-NDARAD481FXF_1_task-task-rest_space-fsLR_den-32k_bold-dtseries.nii \
+#    Schaefer2018_200Parcels_17Networks_order.dlabel.nii COLUMN output.ptseries.nii
 #
 # Extending CPAC
 #
