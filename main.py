@@ -35,9 +35,4 @@ print("Schaefer correlation matrix ", correlation_matrix2)
 #    wb_command -cifti-parcellate sub-NDARAD481FXF_1_task-task-rest_space-fsLR_den-32k_bold-dtseries.nii \
 #    Schaefer2018_200Parcels_17Networks_order.dlabel.nii COLUMN output.ptseries.nii
 #
-# Extending CPAC
-#
-# Prior probability maps added in the file func_preproc_modified.py
-# 
-# I couldn't figure out how to integrate the time series extraction tool. :(
 
